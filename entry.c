@@ -1,5 +1,5 @@
 //
-// Created by bug on 2023/8/18.
+// Created by cty on 2023/8/18.
 //
 #include "minicrt.h"
 
