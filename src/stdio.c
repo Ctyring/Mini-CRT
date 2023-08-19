@@ -8,8 +8,12 @@ int mini_crt_heap_init()
     return 1;
 }
 
-#ifdef WIN32
+#ifdef falsecl
 #include <Windows.h>
+
+int mini_crt_io_init() {
+    return 0;
+}
 
 FILE* fopen(const char* filename, const char* mode)
 {

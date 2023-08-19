@@ -26,6 +26,7 @@ void mini_crt_entry(void)
 
 #ifdef WIN32
     int flag = 0;
+    int argc = 0;
     char* argv[16]; // 最多支持16个参数
     char* cl = GetCommandLineA(); // 获取命令行
 
@@ -47,7 +48,6 @@ void mini_crt_entry(void)
     }
 
 #else
-    int argc;
     char** argv;
     char* ebp_reg = 0;
     // ebp_reg是main函数的栈底指针
@@ -60,7 +60,7 @@ void mini_crt_entry(void)
         crt_fatal_error("heap initialize failed");
 
     // 初始化IO
-    if(!mini_crt_io_init())
+    if(mini_crt_io_init() != 0)
         crt_fatal_error("IO initialize failed");
 
     // 调用main函数

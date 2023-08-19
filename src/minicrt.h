@@ -18,6 +18,7 @@ void free(void* ptr);
 void* malloc(unsigned size);
 static int brk(void* end_data_segment);
 int mini_crt_heap_init();
+int mini_crt_io_init();
 
 // 字符串
 char* itoa(int n, char* str, int radix);
